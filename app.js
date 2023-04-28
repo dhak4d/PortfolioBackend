@@ -9,6 +9,8 @@ app.use(express.json());
 
 const mongoose = require("mongoose")
 const mongoUrl = process.env.DB_HOST;  //db connection string
+const API_URL = process.env.REACT_APP_AXIOS_URL;
+console.log(API_URL);
 
 mongoose.connect(mongoUrl, {
     useNewUrlParser: true
