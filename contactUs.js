@@ -11,7 +11,19 @@ const userDetailsSchema = new mongoose.Schema(
         collection:'ContactUs'
     }
 )
-
 mongoose.model("ContactUs", userDetailsSchema)
+
+const addressInfoSchema = new mongoose.Schema(
+    {
+        Address:String,
+        Phone:String,
+        Email:String
+    },
+    {
+        collection:'ContactInfo'
+    }
+)
+
+mongoose.model("ContactInfo", addressInfoSchema)
 
 
