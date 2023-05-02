@@ -13,11 +13,12 @@ const userDetailsSchema = new mongoose.Schema(
 )
 mongoose.model("ContactUs", userDetailsSchema)
 
+
 const addressInfoSchema = new mongoose.Schema(
     {
-        Address:String,
-        Phone:String,
-        Email:String
+        address:String,
+        phone:String,
+        email:String
     },
     {
         collection:'ContactInfo'

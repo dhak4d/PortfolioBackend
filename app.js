@@ -41,7 +41,7 @@ app.post("/api/ContactUs", async (req, res) => {
     console.log(name, email, phone, message);
     res.send({ status: "ok" });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     res.status(500).send({ status: "error" });
   }
 });
@@ -51,7 +51,7 @@ app.get("/api/GetAllContactUs", async (req, res) => {
   try {
     const registers = await user.find({})
     res.send({ status: "ok", data: registers })
-    console.log(registers)
+    // console.log(registers)
   } catch (error) {
     console.log(error)
   }
@@ -59,10 +59,10 @@ app.get("/api/GetAllContactUs", async (req, res) => {
 
 app.get("/api/GetAboutMe", async (req, res) => {
   try {
-    const version = 'latest';
-    const pare = await about.find({ version })
+    // const version = 'latest';
+    const pare = await about.find({ 'version' : 'latest' })
     res.send({ status: "ok", data: pare })
-    console.log(pare)
+    // console.log(pare)
   } catch (error) {
     console.log(error)
   }
@@ -71,7 +71,8 @@ app.get("/api/GetAboutMe", async (req, res) => {
 app.get("/api/GetAddressInfo", async (req, res) => {
   try {
     const add = await addInfo.find()
-    res.json(add)
+    res.json({data: add })
+    // res.json(add)
     console.log(add)
   } catch (error) {
     console.log(error)
